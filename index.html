@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Neumorphic Clock</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#ecf0f3">
 <link rel="manifest" href="manifest.json">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -15,6 +17,7 @@
    THEME DEFINITIONS
    ========================= */
 
+   
 /* 0 — WHITE (LOCKED) */
 body.theme-white {
   --bg: #ecf0f3;
@@ -169,12 +172,24 @@ body.theme-midnight {
   padding: 0;
   background-color: var(--bg);
   font-family: system-ui, sans-serif;
+
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
 }
 
+
 body {
+  min-height: 100vh;
+  background-color: var(--bg);
   transition: background-color .35s ease;
 }
 
+button {
+  touch-action: manipulation;
+}
+   
+   
 .container {
   min-height: 100vh;
   display: flex;
@@ -183,6 +198,7 @@ body {
   padding: 20px 0;
 }
 
+   
 .panel {
   width: min(92vw, 380px);
   padding: 18px;
